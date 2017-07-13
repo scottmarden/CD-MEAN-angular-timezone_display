@@ -1,0 +1,17 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!
+  </h1>
+</div>
+<div ngClass='pst' style="text-align:center">
+	<button (click)="getTimeByZone('PST')"[ngClass]="{selected: selectedTimeZone === 'PST'}">PST</button>
+	<button (click)="getTimeByZone('MST')"[ngClass]="{selected: selectedTimeZone === 'MST'}">MST</button>
+	<button (click)="getTimeByZone('CST')"[ngClass]="{selected: selectedTimeZone === 'CST'}">CST</button>
+	<button (click)="getTimeByZone('EST')"[ngClass]="{selected: selectedTimeZone === 'EST'}">EST</button>
+	<button (click)="clear()"[ngClass]="{selected: selectedTimeZone === 'null'}">Clear</button>
+
+</div>
+<div style="text-align:center">
+	<h1 *ngIf="selectedTimeZone">{{time | date:'medium' }}</h1>
+</div>
